@@ -38,7 +38,7 @@ def st(message):
 	start = bot.send_message(message.chat.id, "Start ✅")
 	u = "zxcvbnmlkjhgfdsaqwertyuiop__0987654321"
 	es = "1020304050","10203040","123454321","200200","19981998","11223344","1122334455","987654321"
-	for i in range(1300):
+	for i in range(100):
 		m+=1
 		ran = ''.join(random.choice(u)for i in range(4))
 		ran1 = ''.join(random.choice(es)for i in range(1))
