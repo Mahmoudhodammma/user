@@ -42,17 +42,8 @@ def st(message):
 		m+=1
 		ran = ''.join(random.choice(u)for i in range(4))
 		ran1 = ''.join(random.choice(es)for i in range(1))
-		with open("User&Pass.txt","a") as mo:
+		with open("UserPass.txt","a") as mo:
 			mo.write(f"{ran}:{ran1}\n")
-		file = open("User&Pass.txt","r")
-		bot.send_document((message.chat.id),file,caption=f"""
-- - - - - - - - - - - - - - - - - -
-- ᴅᴏɴᴇ ᴍᴀᴋɪɴɢ ᴄᴏᴍʙᴏ️ ✔️
-- ᴄᴏᴍʙᴏ : User&Pass
-- sɪᴢᴇ : {m}
-- - - - - - - - - - - - - - - - - -
-""",reply_to_message_id=(message.message_id))
-		os.remove("User&Pass.txt")
 		ins = types.InlineKeyboardButton(text=f"- User : {ran} 🔰",callback_data="sjdj")
 		ch = types.InlineKeyboardButton(text=f"- Pass : {ran1} ⚠️",callback_data="dfjrhd")
 		em = types.InlineKeyboardButton(text=f"- Number Combo : {m} 🔱",callback_data="sbncn")
@@ -64,6 +55,15 @@ def st(message):
 - Please Wait... ♻️
 - Dev - @uufffuu , @bo0tt , @api_7"""
 		bot.edit_message_text(text=result,chat_id=int(chat_id), message_id=start.message_id,reply_markup=key)
+	file = open("UserPass.txt","r")
+	bot.send_document((message.chat.id),file,caption=f"""
+- - - - - - - - - - - - - - - - - -
+- ᴅᴏɴᴇ ᴍᴀᴋɪɴɢ ᴄᴏᴍʙᴏ️ ✔️
+- ᴄᴏᴍʙᴏ : User&Pass
+- sɪᴢᴇ : {m}
+- - - - - - - - - - - - - - - - - -
+""",reply_to_message_id=(message.message_id))
+	os.remove("UserPass.txt")
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():
     json_string = request.get_data().decode("utf-8")
